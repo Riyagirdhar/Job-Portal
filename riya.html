@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+       <style>
+        body{
+    padding-top: 7rem;
+    background: url(bg1.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+       </style>
+        <script>
+        
+            function show()
+            {
+                var name=document.getElementById("name1").value;
+                var email=document.getElementById("y").value;
+                var number=document.getElementById("x").value;
+                var password=document.getElementById("p1").value;
+                var cpassword=getSelection("p2").value;
+
+                var namecheck = /^[A-Za-z ]{3,30}$/;
+                var emailcheck= /^[A-Za-z0-9._]{7,}@[A-Za-z0-9]{5,}[.]{1}[A-Za-z]{4,}$/;
+                var numbercheck= /^[6789][0-9]{9}$/;
+                var passwordcheck= /^[A-Za-z0-9@#$%&_]{8,16}$/;
+
+            if(namecheck.test(name)){
+                document.getElementById("errorN").innerHTML='';
+            }
+            else{
+                document.getElementById("errorN").innerHTML="Please write only alphabets";
+            }
+            if(emailcheck.test(email)){
+                document.getElementById("errorE").innerHTML='';
+            }
+            else{
+                document.getElementById("errorE").innerHTML="Please write valid email";
+            }
+            if(numbercheck.test(number)){
+                document.getElementById("errorNO").innerHTML='';
+            }
+            else{
+                document.getElementById("errorNO").innerHTML="Please write only numbers";
+            }
+            if(passwordcheck.test(password)){
+                document.getElementById("errorP1").innerHTML='';
+            }
+            else{
+                document.getElementById("errorP1").innerHTML="Please use 1 uppercase, 1 lowercase, 1 special character and 1 number";
+            }
+            if(cpassword.match(password))
+            {
+                document.getElementById("errorP2").innerHTML='';
+            }
+            else{
+                document.getElementById("errorP2").innerHTML="Password not match";
+
+            }
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="img">
+                        <img src="bg2.jpg" alt="" width="100%">
+
+                    </div>
+                </div>
+               
+                <div class="col-md-6">
+                    <form onsubmit="show()">
+                        <div class="mb-3">
+                            <label for="exampleInput1" class="form-label">Full Name</label>
+                            <input type="text" name="name" class="form-control" id="name1" >
+                            <span id="errorN" style="color: red;font-size: 10px;"></span>
+                          
+                          </div>
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Email address</label>
+                          <input type="email" name="email" class="form-control" id="y" >
+                          We'll never share your email with anyone else.
+                          <span id="errorE" style="color: red;font-size: 10px;"></span>
+                        
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInput2" class="form-label">Contact</label>
+                            <input type="number"name="number" class="form-control" id="x" >
+                            <span id="errorNO" style="color: red;font-size: 10px;"></span>
+                          
+                          </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input type="password" name="password" class="form-control" id="p1">
+                          <span id="errorP1" style="color: red;font-size: 10px;"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword2" class="form-label">Confiirm Password</label>
+                            <input type="password" class="form-control" id="p2">
+                            <span id="errorP2" style="color: red;font-size: 10px;"></span>
+                          </div>
+                       
+                        <button type="submit" class="btn btn-primary">Register</button>
+                        <button type="reset" class="btn btn-warning">Reset</button>
+                      </form>
+                </div>
+            
+        </div>
+    </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+</html>

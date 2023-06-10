@@ -1,0 +1,40 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    padding-top: 7rem;
+    background: url(bg1.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+main{
+   
+}
+.row{
+    background-color: #1112128a ;
+   
+
+    border-radius: 16px;
+    box-shadow: 10px 10px 6px;
+    
+}
+.btn:hover{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid;
+    color: blue;
+    
+
+}
+.login{
+    font-size: 20px;
+    color: white;
+}
+.sign{
+    text-align: center;
+    color: white;
+    padding-bottom: 2px;
+}
+*sign{
+    padding: 2px;
+}
